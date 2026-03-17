@@ -1,0 +1,50 @@
+{
+  "jobs": [
+    {
+      "name": "crypto-daily-morning",
+      "description": "加密日报 - 早间播报 (8:00)",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请运行 /root/.openclaw/workspace/crypto-daily-bot/daily-report.sh 生成并发送加密日报。如果脚本失败，使用 python3 /root/.openclaw/workspace/crypto-daily-bot/daily_bot.py 作为备用。",
+        "model": "kimi-coding/k2p5",
+        "thinking": "low"
+      },
+      "sessionTarget": "isolated",
+      "enabled": true,
+      "notify": true,
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "${TELEGRAM_CHAT_ID}"
+      }
+    },
+    {
+      "name": "crypto-daily-evening",
+      "description": "加密日报 - 晚间播报 (20:00)",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 20 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请运行 /root/.openclaw/workspace/crypto-daily-bot/daily-report.sh 生成并发送加密日报晚间版。",
+        "model": "kimi-coding/k2p5",
+        "thinking": "low"
+      },
+      "sessionTarget": "isolated",
+      "enabled": true,
+      "notify": true,
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "${TELEGRAM_CHAT_ID}"
+      }
+    }
+  ]
+}

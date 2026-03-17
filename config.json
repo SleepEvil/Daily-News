@@ -1,0 +1,71 @@
+{
+  "bot_name": "加密日报播报机器人",
+  "version": "1.1.0",
+  "description": "基于 6551 Daily News API 的加密货币市场日报",
+  
+  "api": {
+    "base_url": "https://ai.6551.io",
+    "timeout": 30,
+    "max_retries": 2
+  },
+  
+  "categories": [
+    {
+      "key": "macro",
+      "name": "宏观市场",
+      "icon": "🌍",
+      "priority": 1,
+      "enabled": true
+    },
+    {
+      "key": "web3",
+      "name": "Web3 & Crypto",
+      "icon": "₿",
+      "priority": 2,
+      "enabled": true
+    },
+    {
+      "key": "web3",
+      "name": "DeFi",
+      "subcategory": "defi",
+      "icon": "🦄",
+      "priority": 3,
+      "enabled": true
+    },
+    {
+      "key": "ai",
+      "name": "AI 赛道",
+      "icon": "🤖",
+      "priority": 4,
+      "enabled": true
+    },
+    {
+      "key": "web3",
+      "name": "Meme",
+      "subcategory": "meme",
+      "icon": "🐸",
+      "priority": 5,
+      "enabled": false
+    }
+  ],
+  
+  "report": {
+    "max_news_per_category": 3,
+    "max_tweets_per_category": 1,
+    "include_summary": true,
+    "include_coins": true,
+    "language": "zh"
+  },
+  
+  "schedule": {
+    "enabled": true,
+    "times": ["08:00", "20:00"],
+    "timezone": "Asia/Shanghai"
+  },
+  
+  "output": {
+    "save_to_file": true,
+    "send_to_telegram": true,
+    "format": "markdown"
+  }
+}
