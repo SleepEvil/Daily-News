@@ -17,6 +17,23 @@ from typing import Dict, List, Optional
 
 import httpx
 
+# 加载 .env 文件
+def load_env_file(filepath=".env"):
+    """手动加载 .env 文件到环境变量"""
+    env_path = Path(filepath)
+    if env_path.exists():
+        with open(env_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    os.environ.setdefault(key, value)
+        print(f"[INFO] 已加载环境变量: {filepath}")
+    else:
+        print(f"[WARNING] 未找到 .env 文件: {filepath}")
+
+load_env_file()
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
