@@ -59,7 +59,7 @@
   
   "schedule": {
     "enabled": true,
-    "times": ["08:00", "20:00"],
+    "times": ["09:00", "21:00"],
     "timezone": "Asia/Shanghai"
   },
   

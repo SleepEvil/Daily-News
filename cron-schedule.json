@@ -1,29 +1,17 @@
 {
   "jobs": [
     {
-      "name": "crypto-daily-00",
-      "description": "加密日报 - 午夜播报 (00:00)",
-      "schedule": "0 0 * * *",
+      "name": "crypto-daily-morning",
+      "description": "加密日报 - 早间播报 (09:00)",
+      "schedule": "0 9 * * *",
       "enabled": true
     },
     {
-      "name": "crypto-daily-06",
-      "description": "加密日报 - 早间播报 (06:00)",
-      "schedule": "0 6 * * *",
-      "enabled": true
-    },
-    {
-      "name": "crypto-daily-12",
-      "description": "加密日报 - 午间播报 (12:00)",
-      "schedule": "0 12 * * *",
-      "enabled": true
-    },
-    {
-      "name": "crypto-daily-18",
-      "description": "加密日报 - 晚间播报 (18:00)",
-      "schedule": "0 18 * * *",
+      "name": "crypto-daily-evening",
+      "description": "加密日报 - 晚间播报 (21:00)",
+      "schedule": "0 21 * * *",
       "enabled": true
     }
   ],
-  "note": "每6小时播报一次，覆盖全球主要市场时段"
+  "note": "早晚各一次，减少API频率限制风险"
 }
